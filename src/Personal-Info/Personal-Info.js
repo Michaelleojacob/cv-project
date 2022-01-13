@@ -23,7 +23,6 @@ class PersonalInfo extends Component {
   RenderInputarea = () => {
     return (
       <div>
-        <h3>Personal Information</h3>
         <form onSubmit={this.handleSubmit}>
           <label>
             first name:
