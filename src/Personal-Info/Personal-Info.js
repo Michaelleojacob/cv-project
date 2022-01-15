@@ -4,15 +4,14 @@ class PersonalInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.changePInfoState = this.props.changePInfoState;
+    this.parentEl = 'personalInfo';
   }
 
   DontRenderInputArea = () => (
-    <button onClick={this.changePInfoState}>open</button>
+    <button onClick={() => this.props.handleIsOpen(this.parentEl)}>open</button>
   );
 
   RenderInputarea = () => {
-    const parentEl = 'personalInfo';
     return (
       <div>
         <span>{this.props.firstName}</span>
@@ -23,7 +22,7 @@ class PersonalInfo extends Component {
               type="text"
               name="firstName"
               thing1="lol"
-              onChange={(e) => this.props.handleChange(e, parentEl)}
+              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.firstName}
             ></input>
           </label>
@@ -32,7 +31,7 @@ class PersonalInfo extends Component {
             <input
               type="text"
               name="lastName"
-              onChange={(e) => this.props.handleChange(e, parentEl)}
+              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.lastName}
             ></input>
           </label>
@@ -41,7 +40,7 @@ class PersonalInfo extends Component {
             <input
               type="text"
               name="title"
-              onChange={(e) => this.props.handleChange(e, parentEl)}
+              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.title}
             ></input>
           </label>
@@ -50,7 +49,7 @@ class PersonalInfo extends Component {
             <input
               type="file"
               name="photo"
-              onChange={(e) => this.props.handleChange(e, parentEl)}
+              onChange={(e) => this.props.handleChange(e, this.parentEl)}
             ></input>
           </label>
           <label>
@@ -58,7 +57,7 @@ class PersonalInfo extends Component {
             <input
               type="text"
               name="address"
-              onChange={(e) => this.props.handleChange(e, parentEl)}
+              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.address}
             ></input>
           </label>
@@ -67,7 +66,7 @@ class PersonalInfo extends Component {
             <input
               type="text"
               name="phoneNumber"
-              onChange={(e) => this.props.handleChange(e, parentEl)}
+              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.phoneNumber}
             ></input>
           </label>
@@ -76,7 +75,7 @@ class PersonalInfo extends Component {
             <input
               type="text"
               name="email"
-              onChange={(e) => this.props.handleChange(e, parentEl)}
+              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.email}
             ></input>
           </label>
@@ -85,7 +84,7 @@ class PersonalInfo extends Component {
             <input
               type="text"
               name="description"
-              onChange={(e) => this.props.handleChange(e, parentEl)}
+              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.description}
             ></input>
           </label>
@@ -94,7 +93,9 @@ class PersonalInfo extends Component {
             <button type="clear">clear</button>
           </div>
         </form>
-        <button onClick={this.changePInfoState}>close</button>
+        <button onClick={() => this.props.handleIsOpen(this.parentEl)}>
+          close
+        </button>
       </div>
     );
   };

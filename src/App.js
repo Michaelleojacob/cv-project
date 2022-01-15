@@ -26,10 +26,14 @@ class App extends Component {
     };
   }
 
-  changePInfoState = () => {
-    const personalInfo = { ...this.state.personalInfo };
-    personalInfo.isOpen = !this.state.personalInfo.isOpen;
-    this.setState({ personalInfo });
+  handleIsOpen = (parentEl) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      [parentEl]: {
+        ...prevState[parentEl],
+        isOpen: !this.state[parentEl].isOpen,
+      },
+    }));
   };
 
   handleChange = (e, parentEl) => {
@@ -44,18 +48,14 @@ class App extends Component {
     }));
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
-    return 'hi';
-  };
+  handleSubmit = (e) => e.preventDefault();
 
   render() {
     return (
       <div>
         <PersonalInfo
           personalInfo={this.state.personalInfo}
-          changePInfoState={this.changePInfoState}
+          handleIsOpen={this.handleIsOpen}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
