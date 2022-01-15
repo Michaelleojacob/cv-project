@@ -54,7 +54,7 @@ class App extends Component {
     return (
       <div>
         <PersonalInfo
-          pInfoObj={this.state.personalInfo}
+          personalInfo={this.state.personalInfo}
           changePInfoState={this.changePInfoState}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
