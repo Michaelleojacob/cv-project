@@ -32,12 +32,32 @@ class App extends Component {
     this.setState({ personalInfo });
   };
 
+  handleChange = (e, parentEl) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState((prevState) => ({
+      ...prevState,
+      [parentEl]: {
+        ...prevState[parentEl],
+        [name]: value,
+      },
+    }));
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+    return 'hi';
+  };
+
   render() {
     return (
       <div>
         <PersonalInfo
           pInfoObj={this.state.personalInfo}
           changePInfoState={this.changePInfoState}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
         />
       </div>
     );
