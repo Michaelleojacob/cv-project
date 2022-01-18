@@ -140,7 +140,12 @@ class PersonalInfo extends Component {
             >
               save
             </button>
-            <button type="button">clear</button>
+            <button
+              type="button"
+              onClick={() => this.props.helpers.clearSection(this.parentEl)}
+            >
+              clear
+            </button>
           </div>
         </form>
         <button

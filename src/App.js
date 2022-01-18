@@ -42,6 +42,7 @@ class App extends Component {
         handleChange: this.handleChange,
         forceChange: this.forceChange,
         handleSubmit: this.handleSubmit,
+        clearSection: this.clearSection,
       },
     };
   }
@@ -81,8 +82,6 @@ class App extends Component {
         [name]: value,
       },
     }));
-
-    console.log(this.state[parentProp]);
   };
 
   forceChange = ({ targetProp, value, parentProp }) => {
@@ -96,6 +95,20 @@ class App extends Component {
   };
 
   handleSubmit = (e) => e.preventDefault();
+
+  clearSection = (parentProp) => {
+    Object.keys(this.state[parentProp]).forEach((key) => {
+      if (key !== 'isOpen') {
+        this.setState((prevState) => ({
+          ...prevState,
+          [parentProp]: {
+            ...prevState[parentProp],
+            [key]: '',
+          },
+        }));
+      }
+    });
+  };
 
   render() {
     return (
