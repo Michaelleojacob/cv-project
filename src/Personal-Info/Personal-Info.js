@@ -3,97 +3,150 @@ import React, { Component } from 'react';
 class PersonalInfo extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      tooltip: '',
+      timer: 0,
+    };
     this.parentEl = 'personalInfo';
   }
 
   DontRenderInputArea = () => (
-    <button onClick={() => this.props.handleIsOpen(this.parentEl)}>open</button>
+    <button
+      type="button"
+      onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
+    >
+      open
+    </button>
   );
 
+  handleSave = (e) => {
+    e.preventDefault();
+    this.setState({
+      tooltip: 'your progress has been saved.',
+    });
+    setTimeout(() => {
+      this.setState({
+        tooltip: '',
+      });
+    }, 3000);
+  };
+
   RenderInputarea = () => {
+    // console.log(this.props.personalInfo);
     return (
       <div>
-        <span>{this.props.firstName}</span>
-        <form onSubmit={this.props.handleSubmit}>
+        <div>{this.state.tooltip}</div>
+        <form onSubmit={this.props.helpers.handleSubmit} autoComplete="off">
           <label>
             first name:
             <input
+              autoComplete="off"
               type="text"
               name="firstName"
-              thing1="lol"
-              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.firstName}
+              onChange={(e) =>
+                this.props.helpers.handleChange(e, this.parentEl)
+              }
             ></input>
           </label>
           <label>
             last name:
             <input
+              autoComplete="off"
               type="text"
               name="lastName"
-              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.lastName}
+              onChange={(e) =>
+                this.props.helpers.handleChange(e, this.parentEl)
+              }
             ></input>
           </label>
           <label>
             title:
             <input
+              autoComplete="off"
               type="text"
               name="title"
-              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.title}
+              onChange={(e) =>
+                this.props.helpers.handleChange(e, this.parentEl)
+              }
             ></input>
           </label>
           <label>
             photo:
             <input
+              autoComplete="off"
               type="file"
               name="photo"
-              onChange={(e) => this.props.handleChange(e, this.parentEl)}
+              value={this.props.personalInfo.photo}
+              onChange={(e) =>
+                this.props.helpers.handleChange(e, this.parentEl)
+              }
             ></input>
           </label>
           <label>
             address:
             <input
+              autoComplete="off"
               type="text"
               name="address"
-              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.address}
+              onChange={(e) =>
+                this.props.helpers.handleChange(e, this.parentEl)
+              }
             ></input>
           </label>
           <label>
             phone number:
             <input
+              autoComplete="off"
               type="text"
               name="phoneNumber"
-              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.phoneNumber}
+              onChange={(e) =>
+                this.props.helpers.handleChange(e, this.parentEl)
+              }
             ></input>
           </label>
           <label>
             email:
             <input
+              autoComplete="off"
               type="text"
               name="email"
-              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.email}
+              onChange={(e) =>
+                this.props.helpers.handleChange(e, this.parentEl)
+              }
             ></input>
           </label>
           <label>
             description:
             <input
+              autoComplete="off"
               type="text"
               name="description"
-              onChange={(e) => this.props.handleChange(e, this.parentEl)}
               value={this.props.personalInfo.description}
+              onChange={(e) =>
+                this.props.helpers.handleChange(e, this.parentEl)
+              }
             ></input>
           </label>
           <div>
-            <button type="submit">submit</button>
-            <button type="clear">clear</button>
+            <button
+              type="button"
+              onClick={(e) => this.props.helpers.handleSubmit(e)}
+            >
+              save
+            </button>
+            <button type="button">clear</button>
           </div>
         </form>
-        <button onClick={() => this.props.handleIsOpen(this.parentEl)}>
+        <button
+          type="button"
+          onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
+        >
           close
         </button>
       </div>
