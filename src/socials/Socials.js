@@ -11,61 +11,45 @@ class Socials extends Component {
     return (
       <div>
         <form onSubmit={this.props.helpers.handleSubmit} autoComplete="off">
-          <label>
-            github:
-            <input
-              type="text"
-              name="github"
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-              value={this.props.socials.github}
-            ></input>
-          </label>
-          <label>
-            linkedin:
-            <input
-              type="text"
-              name="linkedin"
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-              value={this.props.socials.linkedin}
-            ></input>
-          </label>
-          <label>
-            twitter:
-            <input
-              type="text"
-              name="twitter"
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-              value={this.props.socials.twitter}
-            ></input>
-          </label>
-          <label>
-            instagram:
-            <input
-              type="text"
-              name="instagram"
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-              value={this.props.socials.instagram}
-            ></input>
-          </label>
-          <label>
-            facebook:
-            <input
-              type="text"
-              name="facebook"
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-              value={this.props.socials.facebook}
-            ></input>
-          </label>
+          <input
+            type="text"
+            name="github"
+            placeholder="github"
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+            value={this.props.socials.github}
+          ></input>
+
+          <input
+            type="text"
+            name="linkedin"
+            placeholder="linkedin"
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+            value={this.props.socials.linkedin}
+          ></input>
+
+          <input
+            type="text"
+            name="twitter"
+            placeholder="twitter"
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+            value={this.props.socials.twitter}
+          ></input>
+
+          <input
+            type="text"
+            name="instagram"
+            placeholder="instagram"
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+            value={this.props.socials.instagram}
+          ></input>
+
+          <input
+            type="text"
+            name="facebook"
+            placeholder="facebook"
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+            value={this.props.socials.facebook}
+          ></input>
         </form>
         <button onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}>
           close

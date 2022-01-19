@@ -21,123 +21,80 @@ class PersonalInfo extends Component {
 
   handleSave = (e) => {
     e.preventDefault();
-    this.setState({
-      tooltip: 'your progress has been saved.',
-    });
-    setTimeout(() => {
-      this.setState({
-        tooltip: '',
-      });
-    }, 3000);
+    this.handleTimer();
   };
 
   RenderInputarea = () => {
-    // console.log(this.props.personalInfo);
     return (
       <div>
         <div>{this.state.tooltip}</div>
         <form onSubmit={this.props.helpers.handleSubmit} autoComplete="off">
-          <label>
-            first name:
-            <input
-              autoComplete="off"
-              type="text"
-              name="firstName"
-              value={this.props.personalInfo.firstName}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
-          </label>
-          <label>
-            last name:
-            <input
-              autoComplete="off"
-              type="text"
-              name="lastName"
-              value={this.props.personalInfo.lastName}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
-          </label>
-          <label>
-            title:
-            <input
-              autoComplete="off"
-              type="text"
-              name="title"
-              value={this.props.personalInfo.title}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
-          </label>
-          <label>
-            photo:
-            <input
-              autoComplete="off"
-              type="file"
-              name="photo"
-              value={this.props.personalInfo.photo}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
-          </label>
-          <label>
-            address:
-            <input
-              autoComplete="off"
-              type="text"
-              name="address"
-              value={this.props.personalInfo.address}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
-          </label>
-          <label>
-            phone number:
-            <input
-              autoComplete="off"
-              type="text"
-              name="phoneNumber"
-              value={this.props.personalInfo.phoneNumber}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
-          </label>
-          <label>
-            email:
-            <input
-              autoComplete="off"
-              type="text"
-              name="email"
-              value={this.props.personalInfo.email}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
-          </label>
-          <label>
-            description:
-            <input
-              autoComplete="off"
-              type="text"
-              name="description"
-              value={this.props.personalInfo.description}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
-          </label>
+          <input
+            autoComplete="off"
+            type="text"
+            name="firstName"
+            value={this.props.personalInfo.firstName}
+            placeholder="first name"
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+          ></input>
+          <input
+            autoComplete="off"
+            type="text"
+            name="lastName"
+            placeholder="last name"
+            value={this.props.personalInfo.lastName}
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+          ></input>
+          <input
+            autoComplete="off"
+            type="text"
+            name="title"
+            placeholder="title"
+            value={this.props.personalInfo.title}
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+          ></input>
+          <input
+            autoComplete="off"
+            type="file"
+            name="photo"
+            placeholder="photo"
+            value={this.props.personalInfo.photo}
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+          ></input>
+          <input
+            autoComplete="off"
+            type="text"
+            name="address"
+            placeholder="address"
+            value={this.props.personalInfo.address}
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+          ></input>
+          <input
+            autoComplete="off"
+            type="text"
+            name="phoneNumber"
+            placeholder="phone number"
+            value={this.props.personalInfo.phoneNumber}
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+          ></input>
+          <input
+            autoComplete="off"
+            type="text"
+            name="email"
+            placeholder="email"
+            value={this.props.personalInfo.email}
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+          ></input>
+          <input
+            autoComplete="off"
+            type="text"
+            name="description"
+            placeholder="description"
+            value={this.props.personalInfo.description}
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+          ></input>
           <div>
-            <button
-              type="button"
-              onClick={(e) => this.props.helpers.handleSubmit(e)}
-            >
+            <button type="button" onClick={(e) => this.handleSave(e)}>
               save
             </button>
             <button
