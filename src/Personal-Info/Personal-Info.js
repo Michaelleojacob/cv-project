@@ -19,11 +19,6 @@ class PersonalInfo extends Component {
     </button>
   );
 
-  handleSave = (e) => {
-    e.preventDefault();
-    this.handleTimer();
-  };
-
   RenderInputarea = () => {
     return (
       <div>
@@ -94,7 +89,10 @@ class PersonalInfo extends Component {
             onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
           ></input>
           <div>
-            <button type="button" onClick={(e) => this.handleSave(e)}>
+            <button
+              type="button"
+              onClick={(e) => this.props.helpers.handleSubmit(e)}
+            >
               save
             </button>
             <button

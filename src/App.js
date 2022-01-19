@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PersonalInfo from './Personal-Info/Personal-Info';
 import Socials from './socials/Socials';
+import Skills from './skills/Skills';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       personalInfo: {
-        isOpen: true,
+        isOpen: false,
         firstName: '',
         lastName: '',
         title: '',
@@ -26,7 +27,9 @@ class App extends Component {
         facebook: '',
       },
       skills: {
-        isOpen: false,
+        isOpen: true,
+        placeholderValue: '',
+        list: [],
       },
       projects: {
         isOpen: false,
@@ -49,7 +52,7 @@ class App extends Component {
 
   closeAllOpenForms = () => {
     Object.keys(this.state).forEach((key) => {
-      if (key !== 'helpers') {
+      if (this.state[key].hasOwnProperty('isOpen')) {
         this.setState((prevState) => ({
           ...prevState,
           [key]: {
@@ -118,6 +121,7 @@ class App extends Component {
           helpers={this.state.helpers}
         />
         <Socials socials={this.state.socials} helpers={this.state.helpers} />
+        <Skills skills={this.state.skills} helpers={this.state.helpers} />
       </div>
     );
   }
