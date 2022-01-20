@@ -4,7 +4,9 @@ import uniqid from 'uniqid';
 class Skills extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      tooltip: '',
+    };
     this.parentEl = 'skills';
   }
 
@@ -18,6 +20,16 @@ class Skills extends React.Component {
 
   handleSaveSkill = (e) => {
     e.preventDefault();
+    if (this.props.skills.list.length > 5) {
+      return this.setState({
+        tooltip: 'too many skills',
+      });
+    }
+    if (this.props.skills.placeholderValue === '') {
+      return this.setState({
+        tooltip: `can't be empty`,
+      });
+    }
     const arr = this.props.skills.list;
     arr.push({
       text: this.props.skills.placeholderValue,
@@ -41,9 +53,22 @@ class Skills extends React.Component {
     });
   };
 
+  handleClearAll = () => {
+    this.clearInputValue();
+    this.props.helpers.forceChange({
+      targetProp: 'list',
+      value: [],
+      parentProp: this.parentEl,
+    });
+    this.setState({
+      tooltip: 'cleared skills',
+    });
+  };
+
   skillsIsOpen = () => {
     return (
       <div>
+        <div>{this.state.tooltip}</div>
         <form onSubmit={this.handleSaveSkill} autoComplete="off">
           <input
             name="placeholderValue"
@@ -51,15 +76,14 @@ class Skills extends React.Component {
             placeholder="add a new skill"
             onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
           ></input>
-          <button>save</button>
+          <button type="submit">save</button>
+          <button type="button" onClick={this.handleClearAll}>
+            clear all skills
+          </button>
         </form>
         {this.props.skills.list.map((item, index) => {
           return (
-            <div
-              key={item.id}
-              onClick={() => this.deleteSkill(index)}
-              // onClick={() => this.props.skills.deleteSkill(index)}
-            >
+            <div key={item.id} onClick={() => this.deleteSkill(index)}>
               {item.text}
               <span>X</span>
             </div>
