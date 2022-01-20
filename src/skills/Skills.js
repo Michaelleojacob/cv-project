@@ -31,6 +31,16 @@ class Skills extends React.Component {
     this.clearInputValue();
   };
 
+  deleteSkill = (itemToDelete) => {
+    const arr = this.props.skills.list;
+    const filteredArr = arr.filter((item, index) => index !== itemToDelete);
+    this.props.helpers.forceChange({
+      targetProp: 'list',
+      value: filteredArr,
+      parentProp: this.parentEl,
+    });
+  };
+
   skillsIsOpen = () => {
     return (
       <div>
@@ -47,7 +57,8 @@ class Skills extends React.Component {
           return (
             <div
               key={item.id}
-              onClick={() => this.props.skills.deleteSkill(index)}
+              onClick={() => this.deleteSkill(index)}
+              // onClick={() => this.props.skills.deleteSkill(index)}
             >
               {item.text}
               <span>X</span>
@@ -86,3 +97,16 @@ class Skills extends React.Component {
 }
 
 export default Skills;
+
+// this was in App initially, moved the logic to this file and used forceChange instead.
+// deleteSkill = (itemToDelete) => {
+//   const arr = [...this.state.skills.list];
+//   const filteredArr = arr.filter((item, index) => index !== itemToDelete);
+//   this.setState((prevState) => ({
+//     ...prevState,
+//     skills: {
+//       ...prevState.skills,
+//       list: filteredArr,
+//     },
+//   }));
+// };
