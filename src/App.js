@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PersonalInfo from './Personal-Info/Personal-Info';
 import Socials from './socials/Socials';
 import Skills from './skills/Skills';
+// import Projects from './projects/Projects';
+import Education from './education/Education';
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +29,7 @@ class App extends Component {
         facebook: '',
       },
       skills: {
-        isOpen: true,
+        isOpen: false,
         placeholderValue: '',
         list: [],
         deleteSkill: this.deleteSkill,
@@ -39,7 +41,13 @@ class App extends Component {
         isOpen: false,
       },
       education: {
-        isOpen: false,
+        isOpen: true,
+        university: '',
+        city: '',
+        degree: '',
+        subject: '',
+        from: '',
+        to: '',
       },
       helpers: {
         handleIsOpen: this.handleIsOpen,
@@ -123,6 +131,11 @@ class App extends Component {
         />
         <Socials socials={this.state.socials} helpers={this.state.helpers} />
         <Skills skills={this.state.skills} helpers={this.state.helpers} />
+        <Education
+          education={this.state.education}
+          helpers={this.state.helpers}
+        />
+        {/* <Projects projects={this.state.projects} helpers={this.state.helpers} /> */}
       </div>
     );
   }

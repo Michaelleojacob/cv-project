@@ -109,7 +109,7 @@ class Skills extends React.Component {
   render() {
     return (
       <div>
-        <h2>Skills</h2>
+        <h3>Skills</h3>
         <div>
           {this.props.skills.isOpen
             ? this.skillsIsOpen()
