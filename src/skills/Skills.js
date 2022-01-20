@@ -31,10 +31,6 @@ class Skills extends React.Component {
     this.clearInputValue();
   };
 
-  handleClick = (itemid) => {
-    console.log(itemid);
-  };
-
   skillsIsOpen = () => {
     return (
       <div>
@@ -47,10 +43,14 @@ class Skills extends React.Component {
           ></input>
           <button>save</button>
         </form>
-        {this.props.skills.list.map((item) => {
+        {this.props.skills.list.map((item, index) => {
           return (
-            <div key={item.id} onClick={(e) => this.handleClick(item.id)}>
+            <div
+              key={item.id}
+              onClick={() => this.props.skills.deleteSkill(index)}
+            >
               {item.text}
+              <span>X</span>
             </div>
           );
         })}

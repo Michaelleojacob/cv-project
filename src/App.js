@@ -30,6 +30,7 @@ class App extends Component {
         isOpen: true,
         placeholderValue: '',
         list: [],
+        deleteSkill: this.deleteSkill,
       },
       projects: {
         isOpen: false,
@@ -111,6 +112,18 @@ class App extends Component {
         }));
       }
     });
+  };
+
+  deleteSkill = (itemToDelete) => {
+    const arr = [...this.state.skills.list];
+    const filteredArr = arr.filter((item, index) => index !== itemToDelete);
+    this.setState((prevState) => ({
+      ...prevState,
+      skills: {
+        ...prevState.skills,
+        list: filteredArr,
+      },
+    }));
   };
 
   render() {
