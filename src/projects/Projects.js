@@ -54,6 +54,18 @@ class Projects extends React.Component {
     });
   };
 
+  handleDelete = (index) => {
+    const oldList = [...this.props.projects.list];
+    const newList = oldList.filter((item, i) => {
+      return i !== index;
+    });
+    this.props.helpers.forceChange({
+      targetProp: 'list',
+      value: newList,
+      parentProp: this.parentEl,
+    });
+  };
+
   renderUI = () => {
     return this.props.projects.list.map((item, i) => {
       return (
@@ -120,7 +132,15 @@ class Projects extends React.Component {
               </button>
             </div>
           </form>
-          <div>{i >= 1 ? <button>delete</button> : ''}</div>
+          <div>
+            {i > 0 ? (
+              <button type="button" onClick={() => this.handleDelete(i)}>
+                delete
+              </button>
+            ) : (
+              ''
+            )}
+          </div>
         </div>
       );
     });
@@ -133,7 +153,9 @@ class Projects extends React.Component {
         {this.props.projects.isOpen ? this.renderUI() : ''}
         <div>
           {this.props.projects.list.length < 3 ? (
-            <button onClick={this.newItem}>add</button>
+            <button type="button" onClick={this.newItem}>
+              add
+            </button>
           ) : (
             ''
           )}
@@ -151,92 +173,3 @@ class Projects extends React.Component {
 }
 
 export default Projects;
-
-//title
-//repo link
-//live link
-//description
-//highlights
-//tech
-
-// projectsOpen = (currentIndex) => {
-//   console.log(currentIndex);
-//   return (
-//     <div>
-//       <form autoComplete="off" onSubmit={this.props.helpers.handleSubmit}>
-//         <label>
-//           title
-//           <input
-//             name="title"
-//             type="text"
-//             placeholder="title"
-//             // value={this.props.projects[list].title}
-//             onChange={(e) => {
-//               this.handleChange(e, currentIndex);
-//             }}
-//           ></input>
-//         </label>
-//         <label>
-//           repository link
-//           <input
-//             name="repo"
-//             type="text"
-//             placeholder="repository link"
-//             // value={this.props.projects[currentIndex].repo}
-//             onChange={(e) => {
-//               this.handleChange(e, currentIndex);
-//             }}
-//           ></input>
-//         </label>
-//         <label>
-//           application link
-//           <input
-//             name="live"
-//             type="text"
-//             placeholder="application link"
-//             // value={this.props.projects[currentIndex].live}
-//             onChange={(e) => {
-//               this.handleChange(e, currentIndex);
-//             }}
-//           ></input>
-//         </label>
-//         <label>
-//           description
-//           <input
-//             name="description"
-//             type="text"
-//             placeholder="description"
-//             // value={this.props.projects[currentIndex].description}
-//             onChange={(e) => {
-//               this.handleChange(e, currentIndex);
-//             }}
-//           ></input>
-//         </label>
-//         <label>
-//           highlights
-//           <input
-//             name="highlights"
-//             type="text"
-//             placeholder="highlights"
-//             // value={this.props.projects[currentIndex].highlights}
-//             onChange={(e) => {
-//               this.handleChange(e, currentIndex);
-//             }}
-//           ></input>
-//         </label>
-//         <label>
-//           technology
-//           <input
-//             name="technology"
-//             type="text"
-//             placeholder="technology"
-//             // value={this.props.projects[currentIndex].technology}
-//             onChange={(e) => {
-//               this.handleChange(e, currentIndex);
-//             }}
-//           ></input>
-//         </label>
-//       </form>
-//     </div>
-//   );
-// };
