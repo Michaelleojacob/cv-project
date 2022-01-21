@@ -4,6 +4,7 @@ import Socials from './socials/Socials';
 import Skills from './skills/Skills';
 import Projects from './projects/Projects';
 import Education from './education/Education';
+import Experience from './experience/Experience';
 import uniqid from 'uniqid';
 
 class App extends Component {
@@ -36,7 +37,7 @@ class App extends Component {
         deleteSkill: this.deleteSkill,
       },
       projects: {
-        isOpen: true,
+        isOpen: false,
         list: [
           {
             id: uniqid(),
@@ -50,7 +51,17 @@ class App extends Component {
         ],
       },
       experience: {
-        isOpen: false,
+        isOpen: true,
+        list: [
+          {
+            id: uniqid(),
+            position: '',
+            company: '',
+            city: '',
+            from: '',
+            to: '',
+          },
+        ],
       },
       education: {
         isOpen: false,
@@ -148,6 +159,10 @@ class App extends Component {
           helpers={this.state.helpers}
         />
         <Projects projects={this.state.projects} helpers={this.state.helpers} />
+        <Experience
+          experience={this.state.experience}
+          helpers={this.state.helpers}
+        />
       </div>
     );
   }

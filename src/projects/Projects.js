@@ -72,28 +72,31 @@ class Projects extends React.Component {
         <div key={item.id}>
           <form>
             <label>
-              title
+              app title:
               <input
                 name="title"
                 type="text"
+                placeholder="app title"
                 value={this.props.projects.list[i].title}
                 onChange={(e) => this.handleChange(e, i)}
               ></input>
             </label>
             <label>
-              repo
+              repo link
               <input
                 name="repo"
                 type="text"
+                placeholder="repo link"
                 value={this.props.projects.list[i].repo}
                 onChange={(e) => this.handleChange(e, i)}
               ></input>
             </label>
             <label>
-              live
+              live link
               <input
                 name="live"
                 type="text"
+                placeholder="live link"
                 value={this.props.projects.list[i].live}
                 onChange={(e) => this.handleChange(e, i)}
               ></input>
@@ -103,6 +106,7 @@ class Projects extends React.Component {
               <input
                 name="highlights"
                 type="text"
+                placeholder="highlights"
                 value={this.props.projects.list[i].highlights}
                 onChange={(e) => this.handleChange(e, i)}
               ></input>
@@ -112,15 +116,17 @@ class Projects extends React.Component {
               <input
                 name="description"
                 type="text"
+                placeholder="description"
                 value={this.props.projects.list[i].description}
                 onChange={(e) => this.handleChange(e, i)}
               ></input>
             </label>
             <label>
-              technology
+              technology used
               <input
                 name="technology"
                 type="text"
+                placeholder="technology used"
                 value={this.props.projects.list[i].technology}
                 onChange={(e) => this.handleChange(e, i)}
               ></input>
@@ -152,7 +158,7 @@ class Projects extends React.Component {
         <h3>Projects</h3>
         {this.props.projects.isOpen ? this.renderUI() : ''}
         <div>
-          {this.props.projects.list.length < 3 ? (
+          {this.props.projects.list.length < 3 && this.props.projects.isOpen ? (
             <button type="button" onClick={this.newItem}>
               add
             </button>
