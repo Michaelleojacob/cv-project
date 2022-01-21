@@ -76,7 +76,7 @@ class Skills extends React.Component {
             placeholder="add a new skill"
             onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
           ></input>
-          <button type="submit">save</button>
+          <button type="submit">add</button>
           <button type="button" onClick={this.handleClearAll}>
             clear all skills
           </button>

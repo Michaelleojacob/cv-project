@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PersonalInfo from './Personal-Info/Personal-Info';
 import Socials from './socials/Socials';
 import Skills from './skills/Skills';
-// import Projects from './projects/Projects';
+import Projects from './projects/Projects';
 import Education from './education/Education';
+import uniqid from 'uniqid';
 
 class App extends Component {
   constructor(props) {
@@ -35,13 +36,24 @@ class App extends Component {
         deleteSkill: this.deleteSkill,
       },
       projects: {
-        isOpen: false,
+        isOpen: true,
+        list: [
+          {
+            id: uniqid(),
+            title: '',
+            repo: '',
+            live: '',
+            description: '',
+            highlights: '',
+            tech: '',
+          },
+        ],
       },
       experience: {
         isOpen: false,
       },
       education: {
-        isOpen: true,
+        isOpen: false,
         university: '',
         city: '',
         degree: '',
@@ -135,7 +147,7 @@ class App extends Component {
           education={this.state.education}
           helpers={this.state.helpers}
         />
-        {/* <Projects projects={this.state.projects} helpers={this.state.helpers} /> */}
+        <Projects projects={this.state.projects} helpers={this.state.helpers} />
       </div>
     );
   }

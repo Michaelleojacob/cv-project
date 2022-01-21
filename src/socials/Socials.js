@@ -51,10 +51,17 @@ class Socials extends Component {
             value={this.props.socials.facebook}
           ></input>
         </form>
-        <button onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}>
-          close
+        <button>save</button>
+        <button onClick={() => this.props.helpers.clearSection(this.parentEl)}>
+          clear
         </button>
-        <button onClick={() => this.props.helpers.clearSection}>clear</button>
+        <div>
+          <button
+            onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
+          >
+            close
+          </button>
+        </div>
       </div>
     );
   };

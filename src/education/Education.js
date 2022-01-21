@@ -7,13 +7,6 @@ class Education extends React.Component {
     this.parentEl = 'education';
   }
 
-  // university: '',
-  //     city: '',
-  //     degree: '',
-  //     subject: '',
-  //     from: '',
-  //     to: '',
-
   educationOpen = () => {
     return (
       <div>
@@ -65,9 +58,20 @@ class Education extends React.Component {
             onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
           ></input>
         </form>
-        <button onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}>
-          close
+        <button type="button">save</button>
+        <button
+          type="button"
+          onClick={() => this.props.helpers.clearSection(this.parentEl)}
+        >
+          clear
         </button>
+        <div>
+          <button
+            onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
+          >
+            close
+          </button>
+        </div>
       </div>
     );
   };
