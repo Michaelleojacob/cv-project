@@ -5,3 +5,22 @@
   display: flex;
   flex-direction: column;
 }
+
+#headerWrap {
+  min-height: 142px;
+  max-height: 142px;
+}
+
+#main-side-wrap {
+  display: flex;
+  flex-direction: row;
+  height: calc(841px - 142px);
+}
+
+#sidebarWrap {
+  flex: 25;
+}
+
+#mainWrap {
+  flex: 75;
+}
