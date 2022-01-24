@@ -5,6 +5,7 @@ import Skills from './skills/Skills';
 import Projects from './projects/Projects';
 import Education from './education/Education';
 import Experience from './experience/Experience';
+import Preview from './preview/Preview';
 import uniqid from 'uniqid';
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       personalInfo: {
-        isOpen: false,
+        isOpen: true,
         firstName: '',
         lastName: '',
         title: '',
@@ -51,7 +52,7 @@ class App extends Component {
         ],
       },
       experience: {
-        isOpen: true,
+        isOpen: false,
         list: [
           {
             id: uniqid(),
@@ -163,6 +164,7 @@ class App extends Component {
           experience={this.state.experience}
           helpers={this.state.helpers}
         />
+        <Preview allInfo={this.state} />
       </div>
     );
   }

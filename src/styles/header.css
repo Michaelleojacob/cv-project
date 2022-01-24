@@ -1,0 +1,22 @@
+#headerWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid blue;
+}
+
+#dummy {
+  min-height: 2rem;
+}
+
+#nameWrap {
+  min-height: 4rem;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+#titleWrap {
+  min-height: 2rem;
+  font-size: 2rem;
+}

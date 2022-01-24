@@ -144,7 +144,7 @@ class Experience extends React.Component {
   render() {
     return (
       <div>
-        <h3>experience</h3>
+        <h3>Experience</h3>
         {this.props.experience.isOpen ? this.renderUI() : ''}
         <div>
           {this.props.experience.list.length < 3 &&
