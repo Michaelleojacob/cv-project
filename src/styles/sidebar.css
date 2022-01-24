@@ -1,3 +1,33 @@
 #sidebarWrap {
   border: 1px solid pink;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+#sb-contact {
+  padding: 0.5rem;
+}
+
+#sb-socials {
+  padding: 0.5rem;
+}
+#sb-skills {
+  padding: 0.5rem;
+}
+
+#sb-contact-component {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+#contact-title {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+  text-align: center;
 }
