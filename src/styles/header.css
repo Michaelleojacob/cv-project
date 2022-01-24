@@ -14,9 +14,15 @@
   min-height: 4rem;
   font-size: 4rem;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 #titleWrap {
   min-height: 2rem;
   font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
 }

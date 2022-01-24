@@ -11,12 +11,10 @@ class Header extends React.Component {
       <div id="headerWrap">
         <div id="dummy"></div>
         <div id="nameWrap">
-          {firstName !== '' ? { firstName } : 'Jane'}{' '}
-          {lastName !== '' ? { lastName } : 'Doe'}
+          {firstName !== '' ? firstName : 'Jane'}{' '}
+          {lastName !== '' ? lastName : 'Doe'}
         </div>
-        <div id="titleWrap">
-          {title !== '' ? { title } : 'Software Developer'}
-        </div>
+        <div id="titleWrap">{title !== '' ? title : 'Software Developer'}</div>
       </div>
     );
   }
