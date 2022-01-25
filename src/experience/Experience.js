@@ -68,8 +68,8 @@ class Experience extends React.Component {
   renderUI = () => {
     return this.props.experience.list.map((item, i) => {
       return (
-        <div key={item.id}>
-          <form>
+        <div key={item.id} className="inputArea">
+          <form className="myform">
             <label>
               position:
               <input
@@ -120,7 +120,7 @@ class Experience extends React.Component {
                 onChange={(e) => this.handleChange(e, i)}
               ></input>
             </label>
-            <div>
+            <div className="save-close-wrap">
               <button>save</button>
               <button type="button" onClick={() => this.handleClear(i)}>
                 clear
@@ -129,9 +129,15 @@ class Experience extends React.Component {
           </form>
           <div>
             {i > 0 ? (
-              <button type="button" onClick={() => this.handleDelete(i)}>
-                delete
-              </button>
+              <div className="del-section">
+                <button
+                  className="del-section"
+                  type="button"
+                  onClick={() => this.handleDelete(i)}
+                >
+                  delete
+                </button>
+              </div>
             ) : (
               ''
             )}
@@ -144,20 +150,23 @@ class Experience extends React.Component {
   render() {
     return (
       <div>
-        <h3>Experience</h3>
+        <h3 className="section-title">Experience</h3>
         {this.props.experience.isOpen ? this.renderUI() : ''}
         <div>
           {this.props.experience.list.length < 3 &&
           this.props.experience.isOpen ? (
-            <button type="button" onClick={this.newItem}>
-              add
-            </button>
+            <div className="add-btn-wrap">
+              <button className="add-btn" type="button" onClick={this.newItem}>
+                add
+              </button>
+            </div>
           ) : (
             ''
           )}
         </div>
-        <div>
+        <div className="open-btn">
           <button
+            className="open-btn"
             onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
           >
             {this.props.experience.isOpen ? 'close' : 'open'}

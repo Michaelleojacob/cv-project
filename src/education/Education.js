@@ -85,8 +85,11 @@ class Education extends React.Component {
 
   educationClosed = () => {
     return (
-      <div>
-        <button onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}>
+      <div className="open-btn">
+        <button
+          className="open-btn"
+          onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
+        >
           open
         </button>
       </div>
@@ -96,7 +99,7 @@ class Education extends React.Component {
   render() {
     return (
       <div>
-        <h3>Education</h3>
+        <h3 className="section-title">Education</h3>
         {this.props.education.isOpen
           ? this.educationOpen()
           : this.educationClosed()}

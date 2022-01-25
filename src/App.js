@@ -150,23 +150,26 @@ class App extends Component {
   render() {
     return (
       <div id="appWrap">
-        <div id="personalInfoWrap">
+        <div id="input-wrap">
           <PersonalInfo
             personalInfo={this.state.personalInfo}
             helpers={this.state.helpers}
           />
+          <Socials socials={this.state.socials} helpers={this.state.helpers} />
+          <Skills skills={this.state.skills} helpers={this.state.helpers} />
+          <Education
+            education={this.state.education}
+            helpers={this.state.helpers}
+          />
+          <Projects
+            projects={this.state.projects}
+            helpers={this.state.helpers}
+          />
+          <Experience
+            experience={this.state.experience}
+            helpers={this.state.helpers}
+          />
         </div>
-        <Socials socials={this.state.socials} helpers={this.state.helpers} />
-        <Skills skills={this.state.skills} helpers={this.state.helpers} />
-        <Education
-          education={this.state.education}
-          helpers={this.state.helpers}
-        />
-        <Projects projects={this.state.projects} helpers={this.state.helpers} />
-        <Experience
-          experience={this.state.experience}
-          helpers={this.state.helpers}
-        />
         <Preview allInfo={this.state} />
       </div>
     );

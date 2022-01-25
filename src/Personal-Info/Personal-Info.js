@@ -13,6 +13,7 @@ class PersonalInfo extends Component {
   DontRenderInputArea = () => (
     <div className="open-btn">
       <button
+        className="open-btn"
         type="button"
         onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
       >
@@ -31,100 +32,126 @@ class PersonalInfo extends Component {
           autoComplete="off"
         >
           <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="firstName"
-              value={this.props.personalInfo.firstName}
-              placeholder="first name"
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
+            <label>
+              first name
+              <input
+                autoComplete="off"
+                type="text"
+                name="firstName"
+                value={this.props.personalInfo.firstName}
+                placeholder="first name"
+                onChange={(e) =>
+                  this.props.helpers.handleChange(e, this.parentEl)
+                }
+              ></input>
+            </label>
           </div>
           <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="lastName"
-              placeholder="last name"
-              value={this.props.personalInfo.lastName}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
+            <label>
+              last name
+              <input
+                autoComplete="off"
+                type="text"
+                name="lastName"
+                placeholder="last name"
+                value={this.props.personalInfo.lastName}
+                onChange={(e) =>
+                  this.props.helpers.handleChange(e, this.parentEl)
+                }
+              ></input>
+            </label>
           </div>
           <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="title"
-              placeholder="title"
-              value={this.props.personalInfo.title}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
+            <label>
+              title
+              <input
+                autoComplete="off"
+                type="text"
+                name="title"
+                placeholder="title"
+                value={this.props.personalInfo.title}
+                onChange={(e) =>
+                  this.props.helpers.handleChange(e, this.parentEl)
+                }
+              ></input>
+            </label>
           </div>
           <div>
-            <input
-              autoComplete="off"
-              type="file"
-              name="photo"
-              placeholder="photo"
-              value={this.props.personalInfo.photo}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
+            <label>
+              image
+              <input
+                autoComplete="off"
+                type="file"
+                name="photo"
+                placeholder="photo"
+                value={this.props.personalInfo.photo}
+                onChange={(e) =>
+                  this.props.helpers.handleChange(e, this.parentEl)
+                }
+              ></input>
+            </label>
           </div>
           <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="address"
-              placeholder="address"
-              value={this.props.personalInfo.address}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
+            <label>
+              address
+              <input
+                autoComplete="off"
+                type="text"
+                name="address"
+                placeholder="address"
+                value={this.props.personalInfo.address}
+                onChange={(e) =>
+                  this.props.helpers.handleChange(e, this.parentEl)
+                }
+              ></input>
+            </label>
           </div>
           <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="phoneNumber"
-              placeholder="phone number"
-              value={this.props.personalInfo.phoneNumber}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
+            <label>
+              phone number
+              <input
+                autoComplete="off"
+                type="text"
+                name="phoneNumber"
+                placeholder="phone number"
+                value={this.props.personalInfo.phoneNumber}
+                onChange={(e) =>
+                  this.props.helpers.handleChange(e, this.parentEl)
+                }
+              ></input>
+            </label>
           </div>
           <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="email"
-              placeholder="email"
-              value={this.props.personalInfo.email}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
+            <label>
+              email
+              <input
+                autoComplete="off"
+                type="text"
+                name="email"
+                placeholder="email"
+                value={this.props.personalInfo.email}
+                onChange={(e) =>
+                  this.props.helpers.handleChange(e, this.parentEl)
+                }
+              ></input>
+            </label>
           </div>
           <div>
-            <input
-              autoComplete="off"
-              type="text"
-              name="description"
-              placeholder="description"
-              value={this.props.personalInfo.description}
-              onChange={(e) =>
-                this.props.helpers.handleChange(e, this.parentEl)
-              }
-            ></input>
+            {/* //*  make this a textarea */}
+            <label>
+              description
+              <input
+                autoComplete="off"
+                type="text"
+                name="description"
+                placeholder="description"
+                value={this.props.personalInfo.description}
+                onChange={(e) =>
+                  this.props.helpers.handleChange(e, this.parentEl)
+                }
+              ></input>
+            </label>
+            {/* //*  make this a textarea */}
           </div>
           <div className="save-close-wrap">
             <button

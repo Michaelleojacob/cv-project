@@ -117,7 +117,10 @@ class Skills extends React.Component {
   skillsIsClosed = () => {
     return (
       <div className="open-btn">
-        <button onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}>
+        <button
+          className="open-btn"
+          onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
+        >
           open
         </button>
       </div>

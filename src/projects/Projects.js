@@ -140,9 +140,15 @@ class Projects extends React.Component {
           </form>
           <div>
             {i > 0 ? (
-              <button type="button" onClick={() => this.handleDelete(i)}>
-                delete
-              </button>
+              <div className={'del-section'}>
+                <button
+                  className="del-section"
+                  type="button"
+                  onClick={() => this.handleDelete(i)}
+                >
+                  delete
+                </button>
+              </div>
             ) : (
               ''
             )}
@@ -168,8 +174,9 @@ class Projects extends React.Component {
             ''
           )}
         </div>
-        <div>
+        <div className="close-button">
           <button
+            className="closebutton"
             onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
           >
             {this.props.projects.isOpen ? 'close' : 'open'}
