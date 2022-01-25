@@ -18,16 +18,36 @@
   padding: 0.5rem;
 }
 
-#sb-contact-component {
+#sb-contact-component,
+#sb-socials-component,
+#sb-skills-component {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   font-size: 1rem;
 }
 
-#contact-title {
+#contact-title,
+#social-title,
+#skills-title {
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid black;
   text-align: center;
 }
+
+.mediaWrap {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.sb-icon {
+  font-size: 1.5rem;
+}
+
+/* #eachSkill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */

@@ -1,12 +1,19 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+  faFacebook,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 
 class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
   render() {
     const { address, phoneNumber, email } = this.props.personalInfo;
     return (
@@ -40,10 +47,58 @@ class Socials extends React.Component {
     const { github, linkedin, twitter, facebook, instagram } =
       this.props.socials;
     return (
-      <div>
-        <div>social media</div>
-        <FontAwesomeIcon icon={faGithub} />
-        {github !== '' ? <div>{github}</div> : ''}
+      <div id="sb-socials-component">
+        <div id="social-title">social media</div>
+        <div id="githubWrap">
+          {github !== '' ? (
+            <div className="mediaWrap">
+              <FontAwesomeIcon className="sb-icon" icon={faGithub} />
+              {github}
+            </div>
+          ) : (
+            ''
+          )}
+        </div>
+        <div id="linkedinWrap">
+          {linkedin !== '' ? (
+            <div className="mediaWrap">
+              <FontAwesomeIcon className="sb-icon" icon={faLinkedin} />
+              {linkedin}
+            </div>
+          ) : (
+            ''
+          )}
+        </div>
+        <div id="twitterWrap">
+          {twitter !== '' ? (
+            <div className="mediaWrap">
+              <FontAwesomeIcon className="sb-icon" icon={faTwitter} />
+              {twitter}
+            </div>
+          ) : (
+            ''
+          )}
+        </div>
+        <div id="facebookWrap">
+          {facebook !== '' ? (
+            <div className="mediaWrap">
+              <FontAwesomeIcon className="sb-icon" icon={faFacebook} />
+              {facebook}
+            </div>
+          ) : (
+            ''
+          )}
+        </div>
+        <div id="instagramWrap">
+          {instagram !== '' ? (
+            <div className="mediaWrap">
+              <FontAwesomeIcon className="sb-icon" icon={faInstagram} />
+              {instagram}
+            </div>
+          ) : (
+            ''
+          )}
+        </div>
       </div>
     );
   }
@@ -55,10 +110,15 @@ class Skills extends React.Component {
     this.state = {};
   }
   render() {
-    const list = this.props.skills;
+    const { list } = this.props.skills;
     return (
-      <div>
-        <div>hi</div>
+      <div id="sb-skills-component">
+        <div id="skills-title">skills</div>
+        <div id="eachSkill">
+          {list.map((item) => {
+            return <div key={item.id}>{item.text}</div>;
+          })}
+        </div>
       </div>
     );
   }
