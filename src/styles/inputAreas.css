@@ -1,0 +1,65 @@
+#appWrap {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+#personalInfoWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+#pinfo-button-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.inputArea {
+  padding: 1rem;
+}
+
+input {
+  width: calc(100% - 1rem);
+}
+
+.close-button {
+  text-align: center;
+}
+
+.closebutton {
+  width: 75%;
+}
+
+.myform {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.save-close-wrap {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.open-btn {
+  text-align: center;
+}
+
+.each-skill {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.del-skill {
+  margin-left: 0.5rem;
+  color: red;
+}

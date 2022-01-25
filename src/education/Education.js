@@ -9,8 +9,12 @@ class Education extends React.Component {
 
   educationOpen = () => {
     return (
-      <div>
-        <form autoComplete="off" onSubmit={this.props.helpers.handleSubmit}>
+      <div className="inputArea">
+        <form
+          className="myform"
+          autoComplete="off"
+          onSubmit={this.props.helpers.handleSubmit}
+        >
           <input
             name="university"
             type="text"
@@ -58,15 +62,18 @@ class Education extends React.Component {
             onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
           ></input>
         </form>
-        <button type="button">save</button>
-        <button
-          type="button"
-          onClick={() => this.props.helpers.clearSection(this.parentEl)}
-        >
-          clear
-        </button>
-        <div>
+        <div className="save-close-wrap">
+          <button type="button">save</button>
           <button
+            type="button"
+            onClick={() => this.props.helpers.clearSection(this.parentEl)}
+          >
+            clear
+          </button>
+        </div>
+        <div className="close-button">
+          <button
+            className="closebutton"
             onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
           >
             close

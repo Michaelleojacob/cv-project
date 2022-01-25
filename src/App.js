@@ -37,6 +37,7 @@ class App extends Component {
         list: [],
         deleteSkill: this.deleteSkill,
       },
+      selectProjectsOrExperience: '',
       projects: {
         isOpen: false,
         list: [
@@ -148,11 +149,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <PersonalInfo
-          personalInfo={this.state.personalInfo}
-          helpers={this.state.helpers}
-        />
+      <div id="appWrap">
+        <div id="personalInfoWrap">
+          <PersonalInfo
+            personalInfo={this.state.personalInfo}
+            helpers={this.state.helpers}
+          />
+        </div>
         <Socials socials={this.state.socials} helpers={this.state.helpers} />
         <Skills skills={this.state.skills} helpers={this.state.helpers} />
         <Education

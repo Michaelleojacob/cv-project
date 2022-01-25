@@ -30,6 +30,9 @@ class Skills extends React.Component {
         tooltip: `can't be empty`,
       });
     }
+    this.setState({
+      tooltip: '',
+    });
     const arr = this.props.skills.list;
     arr.push({
       text: this.props.skills.placeholderValue,
@@ -67,38 +70,53 @@ class Skills extends React.Component {
 
   skillsIsOpen = () => {
     return (
-      <div>
+      <div className="inputArea">
         <div>{this.state.tooltip}</div>
-        <form onSubmit={this.handleSaveSkill} autoComplete="off">
+        <form
+          className="myform"
+          onSubmit={this.handleSaveSkill}
+          autoComplete="off"
+        >
           <input
             name="placeholderValue"
             value={this.props.skills.placeholderValue}
             placeholder="add a new skill"
             onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
           ></input>
-          <button type="submit">add</button>
-          <button type="button" onClick={this.handleClearAll}>
-            clear all skills
-          </button>
+          <div className="save-close-wrap">
+            <button type="submit">save</button>
+            <button type="button" onClick={this.handleClearAll}>
+              clear
+            </button>
+          </div>
         </form>
         {this.props.skills.list.map((item, index) => {
           return (
-            <div key={item.id} onClick={() => this.deleteSkill(index)}>
+            <div
+              className="each-skill"
+              key={item.id}
+              onClick={() => this.deleteSkill(index)}
+            >
               {item.text}
-              <span>X</span>
+              <span className="del-skill">x</span>
             </div>
           );
         })}
-        <button onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}>
-          close
-        </button>
+        <div className="close-button">
+          <button
+            className="closebutton"
+            onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
+          >
+            close
+          </button>
+        </div>
       </div>
     );
   };
 
   skillsIsClosed = () => {
     return (
-      <div>
+      <div className="open-btn">
         <button onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}>
           open
         </button>
@@ -109,7 +127,7 @@ class Skills extends React.Component {
   render() {
     return (
       <div>
-        <h3>Skills</h3>
+        <h3 className="section-title">Skills</h3>
         <div>
           {this.props.skills.isOpen
             ? this.skillsIsOpen()
@@ -121,16 +139,3 @@ class Skills extends React.Component {
 }
 
 export default Skills;
-
-// this was in App initially, moved the logic to this file and used forceChange instead.
-// deleteSkill = (itemToDelete) => {
-//   const arr = [...this.state.skills.list];
-//   const filteredArr = arr.filter((item, index) => index !== itemToDelete);
-//   this.setState((prevState) => ({
-//     ...prevState,
-//     skills: {
-//       ...prevState.skills,
-//       list: filteredArr,
-//     },
-//   }));
-// };

@@ -69,8 +69,8 @@ class Projects extends React.Component {
   renderUI = () => {
     return this.props.projects.list.map((item, i) => {
       return (
-        <div key={item.id}>
-          <form>
+        <div key={item.id} className="inputArea">
+          <form className="myform">
             <label>
               app title:
               <input
@@ -131,7 +131,7 @@ class Projects extends React.Component {
                 onChange={(e) => this.handleChange(e, i)}
               ></input>
             </label>
-            <div>
+            <div className="save-close-wrap">
               <button>save</button>
               <button type="button" onClick={() => this.handleClear(i)}>
                 clear
@@ -155,13 +155,15 @@ class Projects extends React.Component {
   render() {
     return (
       <div>
-        <h3>Projects</h3>
+        <h3 className="section-title">Projects</h3>
         {this.props.projects.isOpen ? this.renderUI() : ''}
         <div>
           {this.props.projects.list.length < 3 && this.props.projects.isOpen ? (
-            <button type="button" onClick={this.newItem}>
-              add
-            </button>
+            <div className="add-btn-wrap">
+              <button className="add-btn" type="button" onClick={this.newItem}>
+                add
+              </button>
+            </div>
           ) : (
             ''
           )}

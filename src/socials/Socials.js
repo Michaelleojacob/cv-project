@@ -9,8 +9,12 @@ class Socials extends Component {
 
   SocialsAreOpen = () => {
     return (
-      <div>
-        <form onSubmit={this.props.helpers.handleSubmit} autoComplete="off">
+      <div className="inputArea">
+        <form
+          className="myform"
+          onSubmit={this.props.helpers.handleSubmit}
+          autoComplete="off"
+        >
           <input
             type="text"
             name="github"
@@ -51,12 +55,17 @@ class Socials extends Component {
             value={this.props.socials.facebook}
           ></input>
         </form>
-        <button>save</button>
-        <button onClick={() => this.props.helpers.clearSection(this.parentEl)}>
-          clear
-        </button>
-        <div>
+        <div className="save-close-wrap">
+          <button>save</button>
           <button
+            onClick={() => this.props.helpers.clearSection(this.parentEl)}
+          >
+            clear
+          </button>
+        </div>
+        <div className="close-button">
+          <button
+            className="closebutton"
             onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}
           >
             close
@@ -68,7 +77,7 @@ class Socials extends Component {
 
   SocialsAreClosed = () => {
     return (
-      <div>
+      <div className="open-btn">
         <button onClick={() => this.props.helpers.handleIsOpen(this.parentEl)}>
           open
         </button>
@@ -79,7 +88,7 @@ class Socials extends Component {
   render() {
     return (
       <div>
-        <h3>Socials</h3>
+        <h3 className="section-title">Socials</h3>
         <div>
           {this.props.socials.isOpen
             ? this.SocialsAreOpen()
