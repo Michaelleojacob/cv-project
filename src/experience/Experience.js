@@ -100,6 +100,16 @@ class Experience extends React.Component {
                 onChange={(e) => this.handleChange(e, i)}
               ></input>
             </label>
+            <div>
+              <span>responsibilities</span>
+              <textarea
+                name="summary"
+                autoCorrect="on"
+                placeholder="responsibilities, description or summary of the job"
+                value={this.props.experience.list[i].summary}
+                onChange={(e) => this.handleChange(e, i)}
+              ></textarea>
+            </div>
             <label>
               from
               <input

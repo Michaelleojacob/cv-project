@@ -1,7 +1,13 @@
 #mainWrap {
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+}
+
+#main-title {
+  color: rgb(8, 98, 128);
+  font-size: 1.3rem;
 }

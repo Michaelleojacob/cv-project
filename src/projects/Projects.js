@@ -103,33 +103,30 @@ class Projects extends React.Component {
             </label>
             <label>
               highlights
-              <input
+              <textarea
                 name="highlights"
-                type="text"
                 placeholder="highlights"
                 value={this.props.projects.list[i].highlights}
                 onChange={(e) => this.handleChange(e, i)}
-              ></input>
+              ></textarea>
             </label>
             <label>
               description
-              <input
+              <textarea
                 name="description"
-                type="text"
                 placeholder="description"
                 value={this.props.projects.list[i].description}
                 onChange={(e) => this.handleChange(e, i)}
-              ></input>
+              ></textarea>
             </label>
             <label>
               technology used
-              <input
+              <textarea
                 name="technology"
-                type="text"
                 placeholder="technology used"
                 value={this.props.projects.list[i].technology}
                 onChange={(e) => this.handleChange(e, i)}
-              ></input>
+              ></textarea>
             </label>
             <div className="save-close-wrap">
               <button>save</button>

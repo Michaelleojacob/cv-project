@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid blue;
+  background: lightblue;
 }
 
 #dummy {

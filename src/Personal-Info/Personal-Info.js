@@ -140,16 +140,14 @@ class PersonalInfo extends Component {
             {/* //*  make this a textarea */}
             <label>
               description
-              <input
-                autoComplete="off"
-                type="text"
+              <textarea
                 name="description"
-                placeholder="description"
+                placeholder="description or summary about yourself"
                 value={this.props.personalInfo.description}
                 onChange={(e) =>
                   this.props.helpers.handleChange(e, this.parentEl)
                 }
-              ></input>
+              ></textarea>
             </label>
             {/* //*  make this a textarea */}
           </div>

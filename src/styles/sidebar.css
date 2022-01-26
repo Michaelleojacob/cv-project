@@ -1,10 +1,10 @@
 #sidebarWrap {
-  border: 1px solid pink;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   justify-content: space-evenly;
+  border-right: 1px solid black;
 }
 
 #sb-contact {
@@ -32,8 +32,8 @@
 #skills-title {
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
-  border-bottom: 1px solid black;
   text-align: center;
+  border-bottom: 1px solid black;
 }
 
 .mediaWrap {

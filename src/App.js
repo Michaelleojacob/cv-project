@@ -60,6 +60,7 @@ class App extends Component {
             position: '',
             company: '',
             city: '',
+            summary: '',
             from: '',
             to: '',
           },
