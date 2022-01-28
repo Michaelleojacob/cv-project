@@ -1,0 +1,9 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#appWrap {
+  background-color: #6c757d;
+}

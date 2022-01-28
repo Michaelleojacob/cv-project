@@ -9,7 +9,7 @@ class Description extends React.Component {
     const { description, title } = this.props;
     return (
       <div id="descriptionWrap">
-        <div id="main-title">
+        <div className="main-title">
           {title !== '' ? title : 'professional summary'}
         </div>
         <div id="main-description">
@@ -28,9 +28,10 @@ class Projects extends React.Component {
     this.state = {};
   }
   render() {
+    console.log(this.props.list);
     return (
       <div>
-        <div>projects</div>
+        <div className={'main-title'}>projects</div>
       </div>
     );
   }
@@ -44,7 +45,7 @@ class Experience extends React.Component {
   render() {
     return (
       <div>
-        <div>experience</div>
+        <div className="main-title">experience</div>
       </div>
     );
   }
@@ -54,14 +55,14 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    console.log(this.props);
   }
   render() {
     const { description, title } = this.props.personalInfo;
+    const { list } = this.props.projects;
     return (
       <div id="mainWrap">
         <Description description={description} title={title} />
-        <Projects />
+        <Projects list={list} />
         <Experience />
       </div>
     );

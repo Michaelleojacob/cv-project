@@ -1,13 +1,13 @@
 #mainWrap {
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  justify-content: space-evenly;
-  padding: 0.5rem;
+  padding: 2rem 1rem;
+  gap: 5rem;
+  background-color: #f8f9fa;
 }
 
-#main-title {
-  color: rgb(8, 98, 128);
-  font-size: 1.3rem;
+.main-title {
+  color: var(--title-color);
+  font-size: var(--title-fontsize);
+  margin-bottom: 0.5rem;
 }

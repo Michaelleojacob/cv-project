@@ -82,6 +82,7 @@ class PersonalInfo extends Component {
               <input
                 autoComplete="off"
                 type="file"
+                id="pinfo-photo"
                 name="photo"
                 placeholder="photo"
                 value={this.props.personalInfo.photo}
