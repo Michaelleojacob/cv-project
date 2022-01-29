@@ -28,7 +28,6 @@ class Projects extends React.Component {
     this.state = {};
   }
   render() {
-    console.log(this.props.list);
     return (
       <div>
         <div className={'main-title'}>projects</div>

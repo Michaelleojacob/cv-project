@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import PersonalInfo from './Personal-Info/Personal-Info';
-import Socials from './socials/Socials';
-import Skills from './skills/Skills';
-import Projects from './projects/Projects';
-import Education from './education/Education';
-import Experience from './experience/Experience';
-import Preview from './preview/Preview';
 import uniqid from 'uniqid';
+import InputArea from './inputArea/inputArea';
+import Preview from './preview/Preview';
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +32,9 @@ class App extends Component {
         list: [],
         deleteSkill: this.deleteSkill,
       },
-      selectProjectsOrExperience: '',
+      projOrJob: {
+        renderProjects: 'true',
+      },
       projects: {
         isOpen: false,
         list: [
@@ -151,26 +148,7 @@ class App extends Component {
   render() {
     return (
       <div id="appWrap">
-        <div id="input-wrap">
-          <PersonalInfo
-            personalInfo={this.state.personalInfo}
-            helpers={this.state.helpers}
-          />
-          <Socials socials={this.state.socials} helpers={this.state.helpers} />
-          <Skills skills={this.state.skills} helpers={this.state.helpers} />
-          <Education
-            education={this.state.education}
-            helpers={this.state.helpers}
-          />
-          <Projects
-            projects={this.state.projects}
-            helpers={this.state.helpers}
-          />
-          <Experience
-            experience={this.state.experience}
-            helpers={this.state.helpers}
-          />
-        </div>
+        <InputArea allInfo={this.state} />
         <Preview allInfo={this.state} />
       </div>
     );
