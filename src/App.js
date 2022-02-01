@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       personalInfo: {
-        isOpen: true,
+        isOpen: false,
         firstName: '',
         lastName: '',
         title: '',
@@ -64,7 +64,7 @@ class App extends Component {
         ],
       },
       education: {
-        isOpen: false,
+        isOpen: true,
         university: '',
         city: '',
         degree: '',

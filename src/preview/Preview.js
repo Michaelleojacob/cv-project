@@ -11,8 +11,15 @@ class Preview extends React.Component {
   }
 
   render() {
-    const { personalInfo, socials, skills, experience, projects } =
-      this.props.allInfo;
+    const {
+      personalInfo,
+      socials,
+      skills,
+      education,
+      projOrJob,
+      experience,
+      projects,
+    } = this.props.allInfo;
     return (
       <div>
         <div id="previewWrap">
@@ -25,6 +32,8 @@ class Preview extends React.Component {
             />
             <Main
               personalInfo={personalInfo}
+              education={education}
+              projOrJob={projOrJob}
               experience={experience}
               projects={projects}
             />

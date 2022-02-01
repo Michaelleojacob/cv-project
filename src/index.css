@@ -2,6 +2,7 @@
 @import url('./styles/inputAreas.css');
 @import url('./styles/preview.css');
 @import url('./styles/header.css');
+@import url('./styles/projectsOrJobs.css');
 @import url('./styles/sidebar.css');
 @import url('./styles/main.css');
 
@@ -12,9 +13,34 @@ textarea {
   font-size: 1rem;
 }
 
+input {
+  text-indent: 0.5rem;
+}
+
+textarea::-webkit-input-placeholder {
+  padding: 0.5rem;
+}
+
+textarea:-moz-placeholder {
+  /* Firefox 18- */
+  padding: 0.5rem;
+}
+
+textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  padding: 0.5rem;
+}
+
+textarea:-ms-input-placeholder {
+  padding: 0.5rem;
+}
+
+textarea {
+  padding: 0.5rem;
+}
+
 input,
 textarea {
-  text-indent: 0.5rem;
   font-size: 1.2rem;
   width: calc(100% - 1rem);
   border: 1px solid #adb5bd;

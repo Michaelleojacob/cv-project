@@ -22,6 +22,33 @@ class Description extends React.Component {
   }
 }
 
+class Education extends React.Component {
+  constructor(props) {
+    super(props);
+    this.stat = {};
+  }
+  formatDate = (date) => {
+    const splitDate = date.split('-');
+    return `${splitDate[1]}/${splitDate[0]}`;
+  };
+  render() {
+    const { city, degree, subject, university, from, to } =
+      this.props.education;
+    return (
+      <div>
+        <div className={'main-title'}>education</div>
+        <div id="main-unvi">{university !== '' ? university : null}</div>
+        <div id="main-city">{city !== '' ? city : null}</div>
+        <div id="main-deg">{degree !== '' ? degree : null}</div>
+        <div id="main-date">
+          {from !== '' ? `${this.formatDate(from)} - ` : null}
+          {from !== '' && to !== '' ? this.formatDate(to) : null}
+        </div>
+      </div>
+    );
+  }
+}
+
 class Projects extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +71,7 @@ class Experience extends React.Component {
   render() {
     return (
       <div>
-        <div className="main-title">experience</div>
+        <div className={'main-title'}>experience</div>
       </div>
     );
   }
@@ -57,12 +84,14 @@ class Main extends React.Component {
   }
   render() {
     const { description, title } = this.props.personalInfo;
+    const { education } = this.props;
     const { list } = this.props.projects;
+    const { renderProjects } = this.props.projOrJob;
     return (
       <div id="mainWrap">
         <Description description={description} title={title} />
-        <Projects list={list} />
-        <Experience />
+        <Education education={education} />
+        {renderProjects === 'true' ? <Projects list={list} /> : <Experience />}
       </div>
     );
   }

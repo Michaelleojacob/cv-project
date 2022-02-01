@@ -11,22 +11,23 @@ class ProjectsOrJobs extends React.Component {
     const { handleChange, handleSubmit } = this.props.helpers;
     const { renderProjects } = this.props.projOrJob;
     return (
-      <div id="proj-or-jobs-wrap">
-        <form className="myform" onSubmit={handleSubmit}>
-          <label>
-            {' '}
-            Would you like to create your resume using projects or job
-            experience?
+      <div>
+        <div id="proj-or-jobs-wrap">
+          <form className="myform" onSubmit={handleSubmit}>
+            <div id="select-question">
+              Would you like to focus on projects or job experience?
+            </div>
             <select
               name="renderProjects"
               value={renderProjects}
+              id="make-selection"
               onChange={(e) => handleChange(e, this.parentEl)}
             >
               <option value={'true'}>projects</option>
               <option value={'false'}>experience</option>
             </select>
-          </label>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }

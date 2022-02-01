@@ -1,0 +1,13 @@
+#proj-or-jobs-wrap {
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+}
+
+#select-question {
+  text-align: center;
+}
+#make-selection {
+  font-size: inherit;
+  text-align: center;
+  padding: 0.1rem;
+}
