@@ -103,7 +103,6 @@ class Main extends React.Component {
     const { education } = this.props;
     const { list } = this.props.projects;
     const { renderProjects } = this.props.projOrJob;
-    console.log(this.state.isEducationBlank);
     return (
       <div id="mainWrap">
         <Description description={description} title={title} />
