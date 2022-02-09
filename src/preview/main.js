@@ -40,6 +40,7 @@ class Education extends React.Component {
         <div id="main-unvi">{university !== '' ? university : null}</div>
         <div id="main-city">{city !== '' ? city : null}</div>
         <div id="main-deg">{degree !== '' ? degree : null}</div>
+        <div id="main-sub">{subject !== '' ? subject : null}</div>
         <div id="main-date">
           {from !== '' ? `${this.formatDate(from)} - ` : null}
           {from !== '' && to !== '' ? this.formatDate(to) : null}
@@ -77,20 +78,33 @@ class Experience extends React.Component {
   }
 }
 
+function checkIfObjectIsPopulated(obj) {
+  const { isOpen, ...checkIfBlank } = obj;
+  const keys = Object.keys(checkIfBlank);
+  return keys.every((item) => obj[item] !== '');
+}
+
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
   render() {
     const { description, title } = this.props.personalInfo;
     const { education } = this.props;
     const { list } = this.props.projects;
     const { renderProjects } = this.props.projOrJob;
+    const isEducationPopulated = checkIfObjectIsPopulated(education);
+    console.log(isEducationPopulated);
     return (
       <div id="mainWrap">
         <Description description={description} title={title} />
-        <Education education={education} />
+        {isEducationPopulated ? (
+          <div>
+            <Education education={education} />
+          </div>
+        ) : null}
         {renderProjects === 'true' ? <Projects list={list} /> : <Experience />}
       </div>
     );
