@@ -36,7 +36,7 @@ class App extends Component {
         renderProjects: 'true',
       },
       projects: {
-        isOpen: false,
+        isOpen: true,
         list: [
           {
             id: uniqid(),
@@ -45,7 +45,7 @@ class App extends Component {
             live: '',
             description: '',
             highlights: '',
-            tech: '',
+            technology: '',
           },
         ],
       },
@@ -64,7 +64,7 @@ class App extends Component {
         ],
       },
       education: {
-        isOpen: true,
+        isOpen: false,
         university: '',
         city: '',
         degree: '',

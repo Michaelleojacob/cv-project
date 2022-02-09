@@ -55,10 +55,28 @@ class Projects extends React.Component {
     super(props);
     this.state = {};
   }
+  renderProjectSection(section, index) {
+    console.log(section);
+    return (
+      <div key={section.id} className={'project-preview'}>
+        <div className="proj-prev-title">{section.title}</div>
+        <div className="proj-prev-repo">{section.repo}</div>
+        <div className="proj-prev-live">{section.live}</div>
+        <div className="proj-prev-desc">{section.description}</div>
+        <div className="proj-prev-high">{section.highlights}</div>
+        <div className="proj-prev-tech">{section.technology}</div>
+      </div>
+    );
+  }
+
   render() {
+    const { list } = this.props;
     return (
       <div>
         <div className={'main-title'}>projects</div>
+        {list.map((item, index) => {
+          return this.renderProjectSection(item, index);
+        })}
       </div>
     );
   }
@@ -101,13 +119,16 @@ class Main extends React.Component {
   render() {
     const { description, title } = this.props.personalInfo;
     const { education } = this.props;
-    const { list } = this.props.projects;
     const { renderProjects } = this.props.projOrJob;
     return (
       <div id="mainWrap">
         <Description description={description} title={title} />
         {this.state.isEducationBlank ? '' : <Education education={education} />}
-        {renderProjects === 'true' ? <Projects list={list} /> : <Experience />}
+        {renderProjects === 'true' ? (
+          <Projects list={this.props.projects.list} />
+        ) : (
+          <Experience list={this.props.experience.list} />
+        )}
       </div>
     );
   }
