@@ -78,33 +78,36 @@ class Experience extends React.Component {
   }
 }
 
-function checkIfObjectIsPopulated(obj) {
+function checkIfObjectIsBlank(obj) {
   const { isOpen, ...checkIfBlank } = obj;
   const keys = Object.keys(checkIfBlank);
-  return keys.every((item) => obj[item] !== '');
+  return keys.every((item) => obj[item] === '');
 }
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isEducationBlank: checkIfObjectIsBlank(this.props.education),
+    };
   }
-
+  componentDidUpdate(prevProps) {
+    if (this.props.education !== prevProps.education) {
+      this.setState({
+        isEducationBlank: checkIfObjectIsBlank(this.props.education),
+      });
+    }
+  }
   render() {
     const { description, title } = this.props.personalInfo;
     const { education } = this.props;
     const { list } = this.props.projects;
     const { renderProjects } = this.props.projOrJob;
-    const isEducationPopulated = checkIfObjectIsPopulated(education);
-    console.log(isEducationPopulated);
+    console.log(this.state.isEducationBlank);
     return (
       <div id="mainWrap">
         <Description description={description} title={title} />
-        {isEducationPopulated ? (
-          <div>
-            <Education education={education} />
-          </div>
-        ) : null}
+        {this.state.isEducationBlank ? '' : <Education education={education} />}
         {renderProjects === 'true' ? <Projects list={list} /> : <Experience />}
       </div>
     );
