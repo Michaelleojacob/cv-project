@@ -70,7 +70,7 @@ class Projects extends React.Component {
     return this.props.projects.list.map((item, i) => {
       return (
         <div key={item.id} className="inputArea">
-          <form className="myform">
+          <form className="myform" onSubmit={this.props.helpers.handleSubmit}>
             <label>
               app title:
               <input
@@ -129,7 +129,7 @@ class Projects extends React.Component {
               ></textarea>
             </label>
             <div className="save-close-wrap">
-              <button>save</button>
+              <button onClick={this.props.helpers.handleSubmit}>save</button>
               <button type="button" onClick={() => this.handleClear(i)}>
                 clear
               </button>
