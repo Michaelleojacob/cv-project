@@ -55,8 +55,7 @@ class Projects extends React.Component {
     super(props);
     this.state = {};
   }
-  renderProjectSection(section, index) {
-    console.log(section);
+  renderProjectSection(section) {
     return (
       <div key={section.id} className={'project-preview'}>
         <div className="proj-prev-title">{section.title}</div>
@@ -74,9 +73,7 @@ class Projects extends React.Component {
     return (
       <div>
         <div className={'main-title'}>projects</div>
-        {list.map((item, index) => {
-          return this.renderProjectSection(item, index);
-        })}
+        {list.map((item) => this.renderProjectSection(item))}
       </div>
     );
   }
@@ -87,10 +84,24 @@ class Experience extends React.Component {
     super(props);
     this.state = {};
   }
+  renderExperienceSection(section) {
+    return (
+      <div key={section.id} className={'experience-preview'}>
+        <div className="exp-prev-position">{section.position}</div>
+        <div className="exp-prev-company">{section.company}</div>
+        <div className="exp-prev-city">{section.city}</div>
+        <div className="exp-prev-summary">{section.summary}</div>
+        <div className="exp-prev-from">{section.from}</div>
+        <div className="exp-prev-to">{section.to}</div>
+      </div>
+    );
+  }
   render() {
+    const { list } = this.props;
     return (
       <div>
         <div className={'main-title'}>experience</div>
+        {list.map((item) => this.renderExperienceSection(item))}
       </div>
     );
   }
