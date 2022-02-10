@@ -17,6 +17,13 @@ class Socials extends Component {
         >
           <input
             type="text"
+            name="personal"
+            placeholder="personal website"
+            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
+            value={this.props.socials.personal}
+          ></input>
+          <input
+            type="text"
             name="github"
             placeholder="github"
             onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}

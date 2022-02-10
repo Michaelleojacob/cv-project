@@ -20,6 +20,7 @@ class App extends Component {
       },
       socials: {
         isOpen: false,
+        personal: '',
         github: '',
         linkedin: '',
         twitter: '',
@@ -68,7 +69,6 @@ class App extends Component {
         university: '',
         city: '',
         degree: '',
-        subject: '',
         from: '',
         to: '',
       },

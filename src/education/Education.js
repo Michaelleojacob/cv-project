@@ -39,14 +39,6 @@ class Education extends React.Component {
           ></input>
 
           <input
-            name="subject"
-            type="text"
-            value={this.props.education.subject}
-            placeholder="subject"
-            onChange={(e) => this.props.helpers.handleChange(e, this.parentEl)}
-          ></input>
-
-          <input
             name="from"
             type="date"
             value={this.props.education.from}

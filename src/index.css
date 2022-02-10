@@ -5,6 +5,7 @@
 @import url('./styles/projectsOrJobs.css');
 @import url('./styles/sidebar.css');
 @import url('./styles/main.css');
+@import url('./styles/education.css');
 
 textarea {
   display: block;

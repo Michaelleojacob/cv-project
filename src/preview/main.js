@@ -32,18 +32,19 @@ class Education extends React.Component {
     return `${splitDate[1]}/${splitDate[0]}`;
   };
   render() {
-    const { city, degree, subject, university, from, to } =
-      this.props.education;
+    const { city, degree, university, from, to } = this.props.education;
     return (
       <div>
         <div className={'main-title'}>education</div>
-        <div id="main-unvi">{university !== '' ? university : null}</div>
-        <div id="main-city">{city !== '' ? city : null}</div>
-        <div id="main-deg">{degree !== '' ? degree : null}</div>
-        <div id="main-sub">{subject !== '' ? subject : null}</div>
-        <div id="main-date">
-          {from !== '' ? `${this.formatDate(from)} - ` : null}
-          {from !== '' && to !== '' ? this.formatDate(to) : null}
+        <div id="education-details">
+          <div></div>
+          <div id="main-unvi">{university !== '' ? university : null}</div>
+          <div id="main-city">{city !== '' ? city : null}</div>
+          <div id="main-deg">{degree !== '' ? degree : null}</div>
+          <div id="main-date">
+            {from !== '' ? `${this.formatDate(from)} - ` : null}
+            {from !== '' && to !== '' ? this.formatDate(to) : null}
+          </div>
         </div>
       </div>
     );
