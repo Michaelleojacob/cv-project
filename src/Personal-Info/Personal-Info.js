@@ -76,7 +76,7 @@ class PersonalInfo extends Component {
               ></input>
             </label>
           </div>
-          <div>
+          {/* <div>
             <label>
               image
               <input
@@ -91,7 +91,7 @@ class PersonalInfo extends Component {
                 }
               ></input>
             </label>
-          </div>
+          </div> */}
           <div>
             <label>
               address

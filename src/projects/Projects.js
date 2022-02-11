@@ -39,9 +39,9 @@ class Projects extends React.Component {
       title: '',
       repo: '',
       live: '',
+      briefSummary: '',
       description: '',
-      highlights: '',
-      tech: '',
+      technology: '',
     };
 
     const oldList = [...this.props.projects.list];
@@ -102,11 +102,11 @@ class Projects extends React.Component {
               ></input>
             </label>
             <label>
-              highlights
+              app Summary
               <textarea
-                name="highlights"
-                placeholder="highlights"
-                value={this.props.projects.list[i].highlights}
+                name="briefSummary"
+                placeholder="app summary"
+                value={this.props.projects.list[i].briefSummary}
                 onChange={(e) => this.handleChange(e, i)}
               ></textarea>
             </label>

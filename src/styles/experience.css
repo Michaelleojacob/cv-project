@@ -1,0 +1,33 @@
+.exp-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.exp-pos-plus-company {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.exp-date-wrap {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.exp-ul-wrap {
+  display: flex;
+  flex-direction: column;
+  all: unset;
+  padding: 0rem 1rem;
+}
+
+.exp-prev-company,
+.exp-prev-position {
+  font-weight: 600;
+}

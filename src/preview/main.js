@@ -22,28 +22,32 @@ class Description extends React.Component {
   }
 }
 
+const formatDate = (date) => {
+  const splitDate = date.split('-');
+  return `${splitDate[1]}/${splitDate[0]}`;
+};
+
 class Education extends React.Component {
   constructor(props) {
     super(props);
     this.stat = {};
   }
-  formatDate = (date) => {
-    const splitDate = date.split('-');
-    return `${splitDate[1]}/${splitDate[0]}`;
-  };
   render() {
     const { city, degree, university, from, to } = this.props.education;
     return (
-      <div>
+      <div id="educationWrap">
         <div className={'main-title'}>education</div>
         <div id="education-details">
-          <div></div>
-          <div id="main-unvi">{university !== '' ? university : null}</div>
-          <div id="main-city">{city !== '' ? city : null}</div>
-          <div id="main-deg">{degree !== '' ? degree : null}</div>
-          <div id="main-date">
-            {from !== '' ? `${this.formatDate(from)} - ` : null}
-            {from !== '' && to !== '' ? this.formatDate(to) : null}
+          <div id="uni-plus-city">
+            <div id="main-uni">{university !== '' ? university : null}</div>
+            <div id="main-city">{city !== '' ? city : null}</div>
+          </div>
+          <div id="deg-plus-dates">
+            <div id="main-deg">{degree !== '' ? `${degree}` : null}</div>
+            <div id="main-date">
+              {from !== '' ? `${formatDate(from)} - ` : null}
+              {from !== '' && to !== '' ? formatDate(to) : null}
+            </div>
           </div>
         </div>
       </div>
@@ -56,15 +60,42 @@ class Projects extends React.Component {
     super(props);
     this.state = {};
   }
+
   renderProjectSection(section) {
+    console.log(section);
+    const renderUlArea = () => {
+      if (section.description !== '' || section.technology !== '') {
+        return (
+          <ul className="desc-plus-tech">
+            {section.description !== '' ? (
+              <li className="proj-prev-desc">{section.description}</li>
+            ) : (
+              ''
+            )}
+            {section.technology !== '' ? (
+              <li className="proj-prev-tech">{section.technology}</li>
+            ) : (
+              ''
+            )}
+          </ul>
+        );
+      }
+    };
+
     return (
       <div key={section.id} className={'project-preview'}>
-        <div className="proj-prev-title">{section.title}</div>
-        <div className="proj-prev-repo">{section.repo}</div>
-        <div className="proj-prev-live">{section.live}</div>
-        <div className="proj-prev-desc">{section.description}</div>
-        <div className="proj-prev-high">{section.highlights}</div>
-        <div className="proj-prev-tech">{section.technology}</div>
+        <div className="title-plus-sum">
+          <div className="proj-prev-title">{section.title}</div>
+          <div className="title-sum-divider">
+            {section.title !== '' && section.briefSummary !== '' ? '|' : ''}
+          </div>
+          <div className="proj-prev-sum">{section.briefSummary}</div>
+        </div>
+        <div className="app-links">
+          <div className="proj-prev-repo">{section.repo}</div>
+          <div className="proj-prev-live">{section.live}</div>
+        </div>
+        {renderUlArea()}
       </div>
     );
   }
@@ -72,7 +103,7 @@ class Projects extends React.Component {
   render() {
     const { list } = this.props;
     return (
-      <div>
+      <div id="project-area">
         <div className={'main-title'}>projects</div>
         {list.map((item) => this.renderProjectSection(item))}
       </div>
@@ -88,19 +119,26 @@ class Experience extends React.Component {
   renderExperienceSection(section) {
     return (
       <div key={section.id} className={'experience-preview'}>
-        <div className="exp-prev-position">{section.position}</div>
-        <div className="exp-prev-company">{section.company}</div>
-        <div className="exp-prev-city">{section.city}</div>
-        <div className="exp-prev-summary">{section.summary}</div>
-        <div className="exp-prev-from">{section.from}</div>
-        <div className="exp-prev-to">{section.to}</div>
+        <div className="exp-pos-plus-company">
+          <div className="exp-prev-position">{section.position}</div>
+          <div>at</div>
+          <div className="exp-prev-company">{section.company}</div>
+        </div>
+        <div className="exp-date-wrap">
+          <div className="exp-prev-city">{section.city}</div>
+          <div className="exp-prev-from">{formatDate(section.from)} - </div>
+          <div className="exp-prev-to">{formatDate(section.to)}</div>
+        </div>
+        <ul className="exp-ul-wrap">
+          <li className="exp-prev-summary">{section.summary}</li>
+        </ul>
       </div>
     );
   }
   render() {
     const { list } = this.props;
     return (
-      <div>
+      <div className="exp-wrap">
         <div className={'main-title'}>experience</div>
         {list.map((item) => this.renderExperienceSection(item))}
       </div>

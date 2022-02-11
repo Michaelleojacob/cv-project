@@ -12,7 +12,7 @@ class App extends Component {
         firstName: '',
         lastName: '',
         title: '',
-        photo: '',
+        // photo: '',
         address: '',
         phoneNumber: '',
         email: '',
@@ -34,24 +34,24 @@ class App extends Component {
         deleteSkill: this.deleteSkill,
       },
       projOrJob: {
-        renderProjects: 'true',
+        renderProjects: 'false',
       },
       projects: {
-        isOpen: true,
+        isOpen: false,
         list: [
           {
             id: uniqid(),
             title: '',
             repo: '',
             live: '',
+            briefSummary: '',
             description: '',
-            highlights: '',
             technology: '',
           },
         ],
       },
       experience: {
-        isOpen: false,
+        isOpen: true,
         list: [
           {
             id: uniqid(),

@@ -6,6 +6,8 @@
 @import url('./styles/sidebar.css');
 @import url('./styles/main.css');
 @import url('./styles/education.css');
+@import url('./styles/projects.css');
+@import url('./styles/experience.css');
 
 textarea {
   display: block;
