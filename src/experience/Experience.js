@@ -38,7 +38,7 @@ class Experience extends React.Component {
       id: uniqid(),
       position: '',
       company: '',
-      live: '',
+      city: '',
       to: '',
       from: '',
     };
