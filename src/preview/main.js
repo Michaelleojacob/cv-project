@@ -123,7 +123,11 @@ class Experience extends React.Component {
       if (section.summary !== '') {
         return (
           <ul className="exp-ul-wrap">
-            {section.summary !== '' ? <li>{section.summary}</li> : ''}
+            {section.summary !== '' ? (
+              <li className="exp-sumary">{section.summary}</li>
+            ) : (
+              ''
+            )}
           </ul>
         );
       }

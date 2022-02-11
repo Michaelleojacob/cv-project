@@ -25,9 +25,14 @@
   flex-direction: column;
   all: unset;
   padding: 0rem 1rem;
+  word-break: break-all;
 }
 
 .exp-prev-company,
 .exp-prev-position {
   font-weight: 600;
+}
+
+.exp-summary {
+  word-break: break-all;
 }
