@@ -1,0 +1,65 @@
+#watermark-header {
+  background-color: #212529;
+  color: #e9ecef;
+  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#title-by-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#my-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+}
+
+#my-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#my-email-wrap {
+  display: flex;
+  gap: 0.2rem;
+  flex-direction: row;
+}
+
+#my-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+}
+
+#michael-socials {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.svg {
+  pointer-events: none;
+}
+
+.path {
+  pointer-events: none;
+}
+
+.watermark-icon {
+  pointer-events: none;
+}
+
+.link-event {
+  cursor: pointer;
+}
+
+#watermark-spacing {
+  min-height: 1rem;
+}

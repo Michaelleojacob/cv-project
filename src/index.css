@@ -1,4 +1,6 @@
 @import url('./styles/app.css');
+@import url('./styles/watermark-header.css');
+@import url('./styles/watermark-socials.css');
 @import url('./styles/inputAreas.css');
 @import url('./styles/preview.css');
 @import url('./styles/header.css');

@@ -7,3 +7,19 @@ html {
 #appWrap {
   background-color: #6c757d;
 }
+
+@media only screen and (max-width: 600px) {
+  #appWrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #appWrap {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex: 50 50;
+  }
+}

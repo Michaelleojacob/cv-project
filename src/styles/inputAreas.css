@@ -11,7 +11,7 @@
   background-color: #ececec;
   border-radius: 8px;
   box-shadow: 0 0 1rem black;
-  padding: 0.5rem;
+  width: 100%;
 }
 
 #personalInfoWrap {

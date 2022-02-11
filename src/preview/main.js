@@ -62,7 +62,6 @@ class Projects extends React.Component {
   }
 
   renderProjectSection(section) {
-    console.log(section);
     const renderUlArea = () => {
       if (section.description !== '' || section.technology !== '') {
         return (
@@ -118,7 +117,6 @@ class Experience extends React.Component {
   }
 
   renderExperienceSection(section) {
-    console.log(section.summary);
     const renderSummary = () => {
       if (section.summary !== '') {
         return (
