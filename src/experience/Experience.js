@@ -41,6 +41,7 @@ class Experience extends React.Component {
       city: '',
       to: '',
       from: '',
+      summary: '',
     };
 
     const oldList = [...this.props.experience.list];

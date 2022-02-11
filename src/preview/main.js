@@ -116,22 +116,40 @@ class Experience extends React.Component {
     super(props);
     this.state = {};
   }
+
   renderExperienceSection(section) {
+    console.log(section.summary);
+    const renderSummary = () => {
+      if (section.summary !== '') {
+        return (
+          <ul className="exp-ul-wrap">
+            {section.summary !== '' ? <li>{section.summary}</li> : ''}
+          </ul>
+        );
+      }
+    };
     return (
       <div key={section.id} className={'experience-preview'}>
         <div className="exp-pos-plus-company">
           <div className="exp-prev-position">{section.position}</div>
-          <div>at</div>
+          {section.position !== '' && section.company !== '' ? (
+            <div>at</div>
+          ) : (
+            ''
+          )}
           <div className="exp-prev-company">{section.company}</div>
         </div>
         <div className="exp-date-wrap">
           <div className="exp-prev-city">{section.city}</div>
-          <div className="exp-prev-from">{formatDate(section.from)} - </div>
-          <div className="exp-prev-to">{formatDate(section.to)}</div>
+          <div className="exp-prev-from">
+            {section.from !== '' ? formatDate(section.from) : ''}
+          </div>
+          <div>{section.from !== '' && section.to !== '' ? '-' : ''}</div>
+          <div className="exp-prev-to">
+            {section.to !== '' ? formatDate(section.to) : ''}
+          </div>
         </div>
-        <ul className="exp-ul-wrap">
-          <li className="exp-prev-summary">{section.summary}</li>
-        </ul>
+        {renderSummary()}
       </div>
     );
   }
