@@ -27,6 +27,7 @@
   flex-direction: column;
   all: unset;
   padding: 0rem 1rem;
+  word-break: break-all;
 }
 
 .proj-prev-desc {
