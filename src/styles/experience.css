@@ -36,3 +36,7 @@
 .exp-summary {
   word-break: break-all;
 }
+
+#inp-exp-wrap {
+  padding-bottom: 1rem;
+}

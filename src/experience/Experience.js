@@ -160,7 +160,7 @@ class Experience extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="inp-exp-wrap">
         <h3 className="section-title">Experience</h3>
         {this.props.experience.isOpen ? this.renderUI() : ''}
         <div>

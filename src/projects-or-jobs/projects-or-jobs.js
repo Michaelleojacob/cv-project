@@ -7,8 +7,24 @@ class ProjectsOrJobs extends React.Component {
     this.parentEl = 'projOrJob';
   }
 
+  handleChangeAndIsOpen = (e) => {
+    const { handleChange, handleIsOpen } = this.props.helpers;
+    const projOrExp = e.target.value;
+    handleChange(e, this.parentEl);
+    switch (projOrExp) {
+      case 'true':
+        handleIsOpen('projects');
+        break;
+      case 'false':
+        handleIsOpen('experience');
+        break;
+      default:
+        break;
+    }
+  };
+
   render() {
-    const { handleChange, handleSubmit } = this.props.helpers;
+    const { handleSubmit } = this.props.helpers;
     const { renderProjects } = this.props.projOrJob;
     return (
       <div>
@@ -21,7 +37,7 @@ class ProjectsOrJobs extends React.Component {
               name="renderProjects"
               value={renderProjects}
               id="make-selection"
-              onChange={(e) => handleChange(e, this.parentEl)}
+              onChange={this.handleChangeAndIsOpen}
             >
               <option value={'true'}>projects</option>
               <option value={'false'}>experience</option>

@@ -157,7 +157,7 @@ class Projects extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="inp-prog-wrap">
         <h3 className="section-title">Projects</h3>
         {this.props.projects.isOpen ? this.renderUI() : ''}
         <div>
