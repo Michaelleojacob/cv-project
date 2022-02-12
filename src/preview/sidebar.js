@@ -1,4 +1,5 @@
 import React from 'react';
+import uniqid from 'uniqid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
@@ -109,16 +110,31 @@ class Skills extends React.Component {
     super(props);
     this.state = {};
   }
+
+  checkIfListIsEmpty = () => {
+    if (this.props.skills.list.length === 0) return true;
+  };
+
   render() {
-    const { list } = this.props.skills;
+    const { list, fakeList } = this.props.skills;
+    const check = this.checkIfListIsEmpty();
     return (
       <div id="sb-skills-component">
         <div id="skills-title">skills</div>
-        <div id="eachSkill">
-          {list.map((item) => {
-            return <div key={item.id}>{item.text}</div>;
-          })}
-        </div>
+
+        {check ? (
+          <div id="eachSkill">
+            {fakeList.map((item) => {
+              return <div key={uniqid()}>{item}</div>;
+            })}
+          </div>
+        ) : (
+          <div id="eachSkill">
+            {list.map((item) => {
+              return <div key={item.id}>{item.text}</div>;
+            })}
+          </div>
+        )}
       </div>
     );
   }

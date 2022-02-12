@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       personalInfo: {
-        isOpen: false,
+        isOpen: true,
         firstName: '',
         lastName: '',
         title: '',
@@ -31,6 +31,7 @@ class App extends Component {
         isOpen: false,
         placeholderValue: '',
         list: [],
+        fakeList: ['html', 'css', 'javascript', 'ruby & rails', 'python'],
         deleteSkill: this.deleteSkill,
       },
       projOrJob: {
@@ -51,7 +52,7 @@ class App extends Component {
         ],
       },
       experience: {
-        isOpen: true,
+        isOpen: false,
         list: [
           {
             id: uniqid(),
