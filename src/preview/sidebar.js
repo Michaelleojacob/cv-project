@@ -42,7 +42,9 @@ class Contact extends React.Component {
 class Socials extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      fakegithub: 'janedoeGithub.com',
+    };
   }
   render() {
     const { github, linkedin, twitter, facebook, instagram } =
@@ -108,7 +110,9 @@ class Socials extends React.Component {
 class Skills extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      fakeList: ['html', 'css', 'javascript', 'ruby & rails', 'python'],
+    };
   }
 
   checkIfListIsEmpty = () => {
@@ -116,7 +120,7 @@ class Skills extends React.Component {
   };
 
   render() {
-    const { list, fakeList } = this.props.skills;
+    const { list } = this.props.skills;
     const check = this.checkIfListIsEmpty();
     return (
       <div id="sb-skills-component">
@@ -124,7 +128,7 @@ class Skills extends React.Component {
 
         {check ? (
           <div id="eachSkill">
-            {fakeList.map((item) => {
+            {this.state.fakeList.map((item) => {
               return <div key={uniqid()}>{item}</div>;
             })}
           </div>

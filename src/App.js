@@ -31,7 +31,6 @@ class App extends Component {
         isOpen: false,
         placeholderValue: '',
         list: [],
-        fakeList: ['html', 'css', 'javascript', 'ruby & rails', 'python'],
         deleteSkill: this.deleteSkill,
       },
       projOrJob: {
